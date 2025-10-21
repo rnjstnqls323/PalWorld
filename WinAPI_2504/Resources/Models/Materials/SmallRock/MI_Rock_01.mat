@@ -1,0 +1,14 @@
+<Material Name="MI_Rock_01">
+    <Shader Vertex="Light/Light.hlsl" Pixel="Light/Light.hlsl"/>
+    <Texture>
+        <DiffuseMap Diffuse="Resources\Textures\Model\SmallRock\mi_rock_01_alb.png"/>
+        <SpecularMap Specular="Resources\Textures\Model\SmallRock\mi_rock_01_smt.png"/>
+        <NormalMap Normal="Resources\Textures\Model\SmallRock\mi_rock_01_nml.png"/>
+    </Texture>
+    <Property Shininess="2" HasNormalMap="1">
+        <Diffuse R="0.588" G="0.588" B="0.588" A="1"/>
+        <Specular R="0.89999998" G="0.89999998" B="0.89999998" A="1"/>
+        <Ambient R="0.588" G="0.588" B="0.588" A="1"/>
+        <Emissive R="0" G="0" B="0" A="1"/>
+    </Property>
+</Material>
