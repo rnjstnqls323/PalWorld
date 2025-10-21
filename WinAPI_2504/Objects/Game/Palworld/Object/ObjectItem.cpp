@@ -16,14 +16,21 @@ ObjectItem::~ObjectItem()
 void ObjectItem::SpawnItem(Vector3 parentPos)
 {
 	isFloor = false;
+	SetActive(true);
+	SetLocalPosition(parentPos);
+
+	UpdateWorld();
+	model->UpdateWorld();
 }
 
-void ObjectItem::Update(BoxCollider* floor, Jorney* jorney)
+void ObjectItem::Update(BoxCollider*& floor, Jorney*& jorney)
 {	
 	if (localPosition.y < 0)SetLocalPosition(localPosition.x, 1, localPosition.z);
 	if (isFloor) return;
 	RigidBody();
 	isFloor = IsCollisionToFloor(floor);
+
+	//Á¶´Ï ´êÀ¸¸é Èí¼ö
 
 	UpdateWorld();
 	model->UpdateWorld();

@@ -9,6 +9,7 @@ PalWorldScene::PalWorldScene()
 	smallRock = new SmallRock();
 	wood = new Wood();
 	jorney = new Jorney();
+	weapon = new Weapon();
 }
 
 PalWorldScene::~PalWorldScene()
@@ -19,15 +20,17 @@ PalWorldScene::~PalWorldScene()
 	delete smallRock;
 	delete wood;
 	delete jorney;
+	delete weapon;
 }
 
 void PalWorldScene::Update()
 {
 	//wood->Update(floor,nullptr);
 	//smallRock->Update(floor,nullptr);
-	//tree->Update();
-	rock->Update();
+	tree->Update((BoxCollider*&)floor, jorney);
+	rock->Update((BoxCollider*&)floor,jorney);
 	jorney->Update(floor);
+	//weapon->Update();
 }
 
 void PalWorldScene::PreRender()
@@ -40,7 +43,7 @@ void PalWorldScene::Render()
 	//wood->Render();
 	//smallRock->Render();
 	rock->Render();
-	//tree->Render();
+	tree->Render();
 	jorney->Render();
 }
 
@@ -52,7 +55,7 @@ void PalWorldScene::GUIRender()
 {
 	//wood->Edit();
 	//smallRock->Edit();
-	rock->Edit();
+	//rock->Edit();
 	//tree->Edit();
 	jorney->Edit();
 }

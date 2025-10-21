@@ -10,13 +10,21 @@ public:
 
 	void MineObject(SphereCollider* sphere);
 
-	virtual void Update(BoxCollider* floor, class Jorney* jorney);
+	virtual void Update(BoxCollider*& floor, class Jorney*& jorney);
 	void Render();
+
+	void Edit();
+
 
 protected:
 	void Init();
-	bool IsJorneyCollision(class Jorney* jorney);
+	bool IsJorneyCollision(class Jorney*& jorney);
 	void DropItem(Vector3 jorneyPos);
+
+	void PushJorneyToBoxCollider(BoxCollider* box, Jorney*& jorney);
+	void PushJorneyToSphereCollider(SphereCollider* sphere, Jorney*& jorney);
+	
+
 	virtual void CreateItems() = 0;
 	virtual void CreateModel() = 0;
 	virtual void CreateCollider() = 0;

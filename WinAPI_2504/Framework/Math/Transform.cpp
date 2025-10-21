@@ -111,3 +111,4 @@ bool Transform::IsActive()
 
 	return parent->IsActive();
 }
+

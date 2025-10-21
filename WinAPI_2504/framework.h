@@ -156,6 +156,8 @@ typedef function<void()> Event;
 #include "Objects/Game/Palworld/Object/Rock.h"
 #include "Objects/Game/Palworld/Object/Tree.h"
 
+#include "Objects/Game/Palworld/Character/Weapon.h"
+#include "Objects/Game/Palworld/Character/Inventory.h"
 #include "Objects/Game/Palworld/Character/Character.h"
 #include "Objects/Game/Palworld/Character/Pal.h"
 #include "Objects/Game/Palworld/Character/Jorney.h"

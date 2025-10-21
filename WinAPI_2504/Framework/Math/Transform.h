@@ -55,6 +55,7 @@ public:
 	void SetTag(string tag) { this->tag = tag; }
 
 	void SetWorld(const Matrix& matrix) { world = matrix; }
+	void RotateAround(Vector3 pivot, Vector3 axis, float angle);
 
 protected:
 	string tag;

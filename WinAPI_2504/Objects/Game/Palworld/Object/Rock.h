@@ -6,7 +6,6 @@ public:
 	Rock();
 	~Rock();
 
-	void Update(); //»©µµµÊ
 
 protected:
 	void CreateItems() override;

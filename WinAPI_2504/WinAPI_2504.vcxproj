@@ -200,8 +200,10 @@
     <ClInclude Include="Objects\Game\Block.h" />
     <ClInclude Include="Objects\Game\GameBall.h" />
     <ClInclude Include="Objects\Game\Palworld\Character\Character.h" />
+    <ClInclude Include="Objects\Game\Palworld\Character\Inventory.h" />
     <ClInclude Include="Objects\Game\Palworld\Character\Jorney.h" />
     <ClInclude Include="Objects\Game\Palworld\Character\Pal.h" />
+    <ClInclude Include="Objects\Game\Palworld\Character\Weapon.h" />
     <ClInclude Include="Objects\Game\Palworld\Object\MainObject.h" />
     <ClInclude Include="Objects\Game\Palworld\Object\ObjectItem.h" />
     <ClInclude Include="Objects\Game\Palworld\Object\Rock.h" />
@@ -286,6 +288,7 @@
     <ClCompile Include="Objects\Game\GameBall.cpp" />
     <ClCompile Include="Objects\Game\Palworld\Character\Character.cpp" />
     <ClCompile Include="Objects\Game\Palworld\Character\Jorney.cpp" />
+    <ClCompile Include="Objects\Game\Palworld\Character\Weapon.cpp" />
     <ClCompile Include="Objects\Game\Palworld\Object\MainObject.cpp" />
     <ClCompile Include="Objects\Game\Palworld\Object\ObjectItem.cpp" />
     <ClCompile Include="Objects\Game\Palworld\Object\Rock.cpp" />

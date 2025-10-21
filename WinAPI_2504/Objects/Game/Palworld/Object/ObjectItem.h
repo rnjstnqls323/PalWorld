@@ -16,7 +16,7 @@ public:
 	~ObjectItem();
 
 	void SpawnItem(Vector3 pos);
-	void Update(BoxCollider* floor, class Jorney* jorney);
+	void Update(BoxCollider*& floor, class Jorney*& jorney);
 	void Render();
 
 	void Edit();

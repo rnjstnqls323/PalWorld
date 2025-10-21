@@ -5,18 +5,11 @@ Tree::Tree():MainObject()
 	tag = "Tree";
 	Init();
 	//model->SetLocalPosition(0, -5, 0);
-
-	UpdateWorld();
-	model->UpdateWorld();
-}
-
-void Tree::Update()
-{
+	Load();
 	UpdateWorld();
 	model->UpdateWorld();
 	collider->UpdateWorld();
 }
-
 
 void Tree::CreateItems()
 {

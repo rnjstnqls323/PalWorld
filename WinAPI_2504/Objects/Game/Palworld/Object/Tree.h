@@ -6,8 +6,6 @@ public:
 	Tree();
 	~Tree() {}
 
-	void Update();
-
 protected:
 
 	void CreateItems() override;

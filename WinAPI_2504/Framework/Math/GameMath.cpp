@@ -37,3 +37,19 @@ bool GameMath::NearlyEqual(const float& s1, const float& s2)
 {
 	return abs(s1 - s2) < FLT_EPSILON;
 }
+
+Vector3 GameMath::ClosestPointOnLineSegment(const Vector3& point, const Vector3& a, const Vector3& b)
+{
+	Vector3 ab = b - a;
+	Vector3 ap = point - a;
+
+	float abLengthSq = Vector3::Dot(ab, ab);  // 선분 길이 제곱
+
+	if (abLengthSq == 0.0f)
+		return a;
+
+	float t = Vector3::Dot(ap, ab) / abLengthSq;
+	t = Clamp(t, 0.0f, 1.0f);
+
+	return a + ab * t;
+}

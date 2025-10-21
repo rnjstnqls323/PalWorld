@@ -17,12 +17,10 @@ void Character::Update(BoxCollider* floor)
 {
 	Move();
 	if (localPosition.y < Radius() + (this->Height() / 2.0f)) localPosition.y = Radius() + (this->Height() / 2.0f) + 0.3f;
-	if (!isFloor)
-	{
-		RigidBody();
-		isFloor = IsCollisionToFloor(floor);
-	}
-	
+
+	RigidBody();
+	IsCollisionToFloor(floor);
+
 
 	model->Update();
 	UpdateWorld();
@@ -83,7 +81,6 @@ void Character::Rotate()
 
 void Character::RigidBody()
 {
-	if (isFloor) return;
 	velocity.y -= GRAVITY * DELTA;
 	localPosition.y += velocity.y * DELTA;
 

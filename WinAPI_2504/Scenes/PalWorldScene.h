@@ -20,4 +20,5 @@ private:
 	SmallRock* smallRock;
 	Wood* wood;
 	Jorney* jorney;
+	Weapon* weapon;
 };

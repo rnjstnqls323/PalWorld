@@ -15,8 +15,8 @@ public:
 	~Character();
 
 	virtual void Update(BoxCollider* floor);
-	void Render();
-	void Edit();
+	virtual void Render();
+	virtual void Edit();
 
 
 protected:
@@ -32,7 +32,6 @@ protected:
 
 protected:
 	int curIndex = 0;
-	bool isFloor = false;
 	
 	float rotateSpeed = 10.0f;
 	float moveSpeed = 5.0f;

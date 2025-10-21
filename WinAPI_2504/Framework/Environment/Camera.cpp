@@ -88,7 +88,6 @@ void Camera::FreeMode()
 
 void Camera::FollowMode()
 {
-    //Vector2 targetPos = target->GetGlobalPosition() - targetOffset;
-    //FixPosition(targetPos);
-    //localPosition = GameMath::Lerp<Vector2>(localPosition, targetPos, speed * DELTA);
+
+
 }

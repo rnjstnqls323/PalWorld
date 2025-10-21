@@ -18,4 +18,5 @@ public:
 	{
 		return start + (end - start) * factor;
 	}
+	static Vector3 ClosestPointOnLineSegment(const Vector3& point, const Vector3& a, const Vector3& b);
 };

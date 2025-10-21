@@ -40,17 +40,37 @@ bool SphereCollider::IsRayCollision(const Ray& ray, RayHit* hitInfo)
 
 bool SphereCollider::IsBoxCollision(BoxCollider* collider)
 {
-    return false;
+	return collider->IsSphereCollision(this);
 }
 
 bool SphereCollider::IsSphereCollision(SphereCollider* collider)
 {
-    return false;
+	float scaledRadiusA = radius * GetGlobalScale().x;  // 보통 x,y,z 스케일이 같다고 가정하거나
+	float scaledRadiusB = collider->radius * collider->GetGlobalScale().x;
+
+	float distance = Vector3::Distance(GetGlobalPosition(), collider->GetGlobalPosition());
+	float radiusSum = scaledRadiusA + scaledRadiusB;
+
+	return distance <= radiusSum;
 }
 
-bool SphereCollider::IsCapsuleCollision(CapsuleCollider* collider)
+bool SphereCollider::IsCapsuleCollision(CapsuleCollider* capsule)
 {
-    return false;
+	Vector3 capsuleStart = capsule->GetStartPoint();
+	Vector3 capsuleEnd = capsule->GetEndPoint();
+	float capsuleRadius = capsule->Radius();
+
+	Vector3 sphereCenter = this->GetGlobalPosition();  // 스피어 중심
+	float sphereRadius = this->Radius();
+
+	// === 1. 구의 중심에서 캡슐 선분에 가장 가까운 점 구하기 ===
+	Vector3 closestPoint = GameMath::ClosestPointOnLineSegment(sphereCenter, capsuleStart, capsuleEnd);
+
+	// === 2. 가장 가까운 점과 구의 중심 사이 거리 계산 ===
+	float distance = Vector3::Distance(closestPoint, sphereCenter);
+
+	// === 3. 두 반지름 합보다 가까우면 충돌 ===
+	return distance <= (capsuleRadius + sphereRadius);
 }
 
 void SphereCollider::MakeMesh()

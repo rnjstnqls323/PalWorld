@@ -2,6 +2,8 @@
 
 class Camera : public Transform
 {
+private:
+	const int CAMERA_ARM = 10;
 public:
 	Camera();
 	~Camera();

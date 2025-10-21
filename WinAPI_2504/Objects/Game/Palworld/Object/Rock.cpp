@@ -7,20 +7,13 @@ Rock::Rock():MainObject()
 
 	Load();
 	UpdateWorld();
-	//model->UpdateWorld();
+	model->UpdateWorld();
+	collider->UpdateWorld();
 } 
 
 Rock::~Rock()
 {
 }
-
-void Rock::Update()
-{
-	UpdateWorld();
-	model->UpdateWorld();
-	collider->UpdateWorld();
-}
-
 void Rock::CreateItems()
 {
 	items.resize(MAX_ITEM_NUM);
@@ -34,7 +27,7 @@ void Rock::CreateItems()
 void Rock::CreateModel()
 {
 	model = new Model("Rock");
-	model->SetLocalPosition(0, -5, 0);
+	model->SetLocalPosition(1, -6, 0);
 	model->UpdateWorld();
 }
 

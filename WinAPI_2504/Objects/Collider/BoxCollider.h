@@ -26,6 +26,7 @@ public:
 
 	void SaveBox();
 	void LoadBox();
+	Vector3 GetSize() { return size; }
 
 private:
 	bool IsSeperateAxis(Vector3 D, Vector3 axis, ObbDesc box1, ObbDesc box2);
