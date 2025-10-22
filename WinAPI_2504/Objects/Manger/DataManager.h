@@ -2,17 +2,11 @@
 
 struct ItemData
 {
-	enum Type
-	{
-		Weapon = 1, Armor, Potion
-	};
-
 	int key;
 	string name;
-	string explane;
 	int price;
-	int value;
-	Type type;
+	int weight;
+	float value;
 };
 
 class DataManager : public Singleton<DataManager>

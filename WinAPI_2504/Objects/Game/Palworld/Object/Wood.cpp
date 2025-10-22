@@ -20,3 +20,8 @@ void Wood::SetItemType()
 {
 	type = ItemType::Wood;
 }
+
+void Wood::SetItemData()
+{
+	data = DataManager::Get()->GetItem(1002);
+}

@@ -7,6 +7,8 @@ Quad::Quad(Vector2 size) : size(size)
 	mesh = new Mesh<VertexType>();
 	MakeMesh();
 	mesh->CreateMesh();
+
+	GetMaterial()->SetShader(L"Basic/Texture.hlsl");
 }
 
 Quad::Quad(wstring textureFile, Vector2 startUV, Vector2 endUV)
@@ -19,6 +21,8 @@ Quad::Quad(wstring textureFile, Vector2 startUV, Vector2 endUV)
 	mesh = new Mesh<VertexType>();
 	MakeMesh();
 	mesh->CreateMesh();
+
+	GetMaterial()->SetShader(L"Basic/Texture.hlsl");
 }
 
 Quad::~Quad()

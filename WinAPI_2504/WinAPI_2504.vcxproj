@@ -199,6 +199,7 @@
     <ClInclude Include="Objects\Collider\SphereCollider.h" />
     <ClInclude Include="Objects\Game\Block.h" />
     <ClInclude Include="Objects\Game\GameBall.h" />
+    <ClInclude Include="Objects\Game\Palworld\Basic\Button.h" />
     <ClInclude Include="Objects\Game\Palworld\Character\Character.h" />
     <ClInclude Include="Objects\Game\Palworld\Character\Inventory.h" />
     <ClInclude Include="Objects\Game\Palworld\Character\Jorney.h" />
@@ -287,6 +288,7 @@
     <ClCompile Include="Objects\Game\Block.cpp" />
     <ClCompile Include="Objects\Game\GameBall.cpp" />
     <ClCompile Include="Objects\Game\Palworld\Character\Character.cpp" />
+    <ClCompile Include="Objects\Game\Palworld\Character\Inventory.cpp" />
     <ClCompile Include="Objects\Game\Palworld\Character\Jorney.cpp" />
     <ClCompile Include="Objects\Game\Palworld\Character\Weapon.cpp" />
     <ClCompile Include="Objects\Game\Palworld\Object\MainObject.cpp" />

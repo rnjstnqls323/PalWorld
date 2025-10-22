@@ -3,7 +3,7 @@
 
 ModelRenderScene::ModelRenderScene()
 {
-	model = new Model("Wood");
+	model = new Model("PokeBall");
 }
 
 ModelRenderScene::~ModelRenderScene()

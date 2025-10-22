@@ -5,6 +5,12 @@ Camera::Camera()
 	tag = "Camera";
 
 	viewBuffer = new ViewBuffer();
+
+    center = { SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 };
+    ClientToScreen(hWnd, &center);
+    SetCursorPos(center.x, center.y);
+
+
 }
 
 Camera::~Camera()
@@ -15,6 +21,12 @@ Camera::~Camera()
 void Camera::Update()
 {
 	projection = Environment::Get()->GetPerspective();
+
+    if (Input::Get()->IsKeyDown(VK_ESCAPE))
+    {
+        isMouseHide = !isMouseHide;
+        ShowCursor(true);
+    }
 
     if (target)
         FollowMode();
@@ -88,6 +100,43 @@ void Camera::FreeMode()
 
 void Camera::FollowMode()
 {
+    float distance = 8;
+    Vector3 back = -target->GetForward();
+    Vector3 camPos = (target->GetGlobalPosition() + (back * distance));
+    camPos.y += 5;
+
+    SetLocalPosition(camPos);
 
 
+
+    LookAt();
+   // localRotation.x = 0.5;
+}
+
+void Camera::LookAt()
+{
+    if (!isMouseHide) return;
+
+    // 1. 현재 마우스 위치 가져오기
+    POINT currentMousePos;
+    GetCursorPos(&currentMousePos);
+
+    // 3. 마우스 델타 계산 (현재 위치 - 중앙)
+    int deltaX = currentMousePos.x - center.x;
+    int deltaY = currentMousePos.y - center.y;
+
+    // 4. 커서 다시 가운데로 이동 (마우스 고정)
+    SetCursorPos(center.x, center.y);
+
+    // 5. 마우스 감도 & 회전 속도 적용
+    float sensitivity = 0.3f;
+
+    float yaw = deltaX * sensitivity * rotSpeed * DELTA;
+    float pitch = deltaY * sensitivity * rotSpeed * DELTA;
+
+    // 6. 회전 적용
+    Rotate(Vector3::Up(), yaw);         // 좌우 회전 (Yaw)
+    Rotate(Vector3::Right(), pitch);   // 상하 회전 (Pitch)
+
+    // ※ pitch는 -를 붙여야 일반적인 FPS 스타일로 동작 (마우스 위로 → 아래 보기)
 }

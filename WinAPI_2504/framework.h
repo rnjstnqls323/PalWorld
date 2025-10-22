@@ -148,6 +148,8 @@ typedef function<void()> Event;
 #include "Objects/Game/Block.h"
 #include "Objects/Game/Steve.h"
 
+#include "Objects/Game/Palworld/Basic/Button.h"
+
 #include "Objects/Game/Palworld/Object/ObjectItem.h"
 #include "Objects/Game/Palworld/Object/MainObject.h"
 #include "Objects/Game/Palworld/Object/WorldFloor.h"

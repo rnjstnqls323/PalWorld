@@ -3,17 +3,17 @@
 
 ModelAnimationScene::ModelAnimationScene()
 {
-	model = new ModelAnimator("Jorney");
+	model = new ModelAnimator("LittleCat");
 	model->SetVertexShader(L"Model/Model.hlsl");
 
 	//model->ReadClip("Attack", 1);
 	model->ReadClip("Idle", 0);
 	model->ReadClip("Run", 0);
-	model->ReadClip("Attack", 0);
-	model->ReadClip("Walk", 0);
-	model->ReadClip("SitWalk", 0);
-	model->ReadClip("Throw", 0);
-	model->ReadClip("Jump", 0);
+	//model->ReadClip("Attack", 0);
+	model->ReadClip("Death", 0);
+	//model->ReadClip("SitWalk", 0);
+	//model->ReadClip("Throw", 0);
+	//model->ReadClip("Jump", 0);
 	model->CreateTexture();
 }
 

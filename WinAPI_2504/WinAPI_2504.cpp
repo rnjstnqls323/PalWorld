@@ -45,6 +45,9 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
     MSG msg = {};
 
+
+
+
     GameManager* gameManager = new GameManager();
     
     while (msg.message != WM_QUIT)
@@ -78,6 +81,7 @@ void Init()
     /////////////////////////////////////////////////////////////////////////////////
 
     //Shader Load
+
     
 }
 

@@ -3,6 +3,7 @@
 
 PalWorldScene::PalWorldScene()
 {
+	DataManager::Get()->LoadData("ItemData.csv");
 	floor = new WorldFloor();
 	rock = new Rock();
 	tree = new Tree();
@@ -10,6 +11,8 @@ PalWorldScene::PalWorldScene()
 	wood = new Wood();
 	jorney = new Jorney();
 	weapon = new Weapon();
+
+	quad = new Quad(L"Resources/Textures/Test.jfif");
 }
 
 PalWorldScene::~PalWorldScene()
@@ -21,6 +24,7 @@ PalWorldScene::~PalWorldScene()
 	delete wood;
 	delete jorney;
 	delete weapon;
+	delete quad;
 }
 
 void PalWorldScene::Update()
@@ -31,6 +35,8 @@ void PalWorldScene::Update()
 	rock->Update((BoxCollider*&)floor,jorney);
 	jorney->Update(floor);
 	//weapon->Update();
+
+	quad->UpdateWorld();
 }
 
 void PalWorldScene::PreRender()
@@ -49,6 +55,7 @@ void PalWorldScene::Render()
 
 void PalWorldScene::PostRender()
 {
+	quad->Render();
 }
 
 void PalWorldScene::GUIRender()
@@ -58,4 +65,7 @@ void PalWorldScene::GUIRender()
 	//rock->Edit();
 	//tree->Edit();
 	jorney->Edit();
+	quad->SetTag("Quad");
+	quad->Edit();
+
 }

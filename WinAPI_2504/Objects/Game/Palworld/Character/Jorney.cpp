@@ -8,6 +8,8 @@ Jorney::Jorney():Character(0.5,1.5)
 	leftHand->SetTag("LeftHand");
 	rightHand->SetTag("RightHand");
 
+	inventory = new Inventory();
+
 	Init();
 	Load();
 	model->Load();
@@ -18,7 +20,7 @@ Jorney::Jorney():Character(0.5,1.5)
 	weapon->Load();
 	weapon->SetParent(leftHand);
 
-	//CAM->SetTarget(this);
+	CAM->SetTarget(this);
 }
 
 Jorney::~Jorney()
@@ -74,22 +76,24 @@ void Jorney::Move()
 		isRun = false;
 	}
 
+
+
 	if (Input::Get()->IsKeyPress('W'))
 	{
-		moveDir += Vector3::Forward();
+		moveDir +=CAM->GetForward();
 	}
 	else if (Input::Get()->IsKeyPress('S'))
 	{
-		moveDir += Vector3::Back();
+		moveDir -= CAM->GetForward();
 	}
 
 	if (Input::Get()->IsKeyPress('A'))
 	{
-		moveDir += Vector3::Left();
+		moveDir -= CAM->GetRight()* TURN_SPEED;
 	}
 	else if (Input::Get()->IsKeyPress('D'))
 	{
-		moveDir += Vector3::Right();
+		moveDir += CAM->GetRight()*TURN_SPEED;
 	}
 
 	if (moveDir.Length() > 0.0f)
@@ -110,7 +114,10 @@ void Jorney::Move()
 			Translate(moveDir * moveSpeed * DELTA);
 			status = Status::Walk;
 		}
-		Rotate();
+		if (Vector3::Dot(CAM->GetForward(), moveDir) > 0.1f)
+		{
+			Rotate();
+		}
 	}
 	else if (!isSit)
 	{

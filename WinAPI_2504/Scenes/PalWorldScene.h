@@ -21,4 +21,5 @@ private:
 	Wood* wood;
 	Jorney* jorney;
 	Weapon* weapon;
+	Quad* quad;
 };

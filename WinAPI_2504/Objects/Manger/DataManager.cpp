@@ -10,7 +10,8 @@ DataManager::~DataManager()
 
 void DataManager::LoadData(const string& fileName)
 {
-	ifstream file(fileName);
+	string path = "Resources/Tables/";
+	ifstream file(path+fileName);
 	if (!file.is_open())
 	{
 		MessageBox(nullptr, L"Failed to open file", L"Error", MB_OK);
@@ -34,10 +35,9 @@ void DataManager::LoadData(const string& fileName)
 		ItemData itemData;
 		itemData.key = stoi(data[0]);
 		itemData.name = data[1];
-		itemData.explane = data[2];
 		itemData.price = stoi(data[3]);
-		itemData.value = stoi(data[4]);
-		itemData.type = (ItemData::Type)stoi(data[5]);
+		itemData.weight = stoi(data[3]);
+		itemData.value = stof(data[4]);
 
 		itemDatas[itemData.key] = itemData;
 	}

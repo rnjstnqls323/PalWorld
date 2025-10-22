@@ -51,6 +51,7 @@ void ObjectItem::Edit()
 
 void ObjectItem::Init()
 {
+	SetItemData();
 	SetItemType();
 	CreateModel();
 	model->SetParent(this);

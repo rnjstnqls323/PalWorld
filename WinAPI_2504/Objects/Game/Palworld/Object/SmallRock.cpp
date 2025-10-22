@@ -20,3 +20,8 @@ void SmallRock::SetItemType()
 {
 	type = ItemType::SmallRock;
 }
+
+void SmallRock::SetItemData()
+{
+	data = DataManager::Get()->GetItem(1001);
+}

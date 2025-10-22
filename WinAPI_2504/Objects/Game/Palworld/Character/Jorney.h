@@ -7,6 +7,8 @@ private:
 	{
 		Idle, Run, Attack, Walk, SitWalk, Throw, Jump, SitIdle
 	};
+
+	const float TURN_SPEED = 0.2f;
 public:
 	Jorney();
 	~Jorney();
@@ -16,6 +18,7 @@ public:
 	void Edit() override;
 
 	Weapon*& GetWeapon() { return weapon; }
+	Inventory*& GetInventory() { return inventory; }
 
 protected:
 	void Move() override;
@@ -38,8 +41,9 @@ private:
 	bool isSit = false;
 
 	//웨폰작업하기 고른웨폰이랑/ 웨폰리스트
-
 	Weapon* weapon;
+
+	Inventory* inventory;
 
 	Status status = Status::Idle;
 	Transform* leftHand;
