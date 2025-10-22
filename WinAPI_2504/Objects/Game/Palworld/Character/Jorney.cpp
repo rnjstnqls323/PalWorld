@@ -18,7 +18,7 @@ Jorney::Jorney():Character(0.5,1.5)
 	weapon->Load();
 	weapon->SetParent(leftHand);
 
-	CAM->SetTarget(this);
+	//CAM->SetTarget(this);
 }
 
 Jorney::~Jorney()
