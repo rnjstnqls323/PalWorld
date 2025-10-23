@@ -7,6 +7,7 @@ struct ItemData
 	int price;
 	int weight;
 	float value;
+	bool itemStack;
 };
 
 class DataManager : public Singleton<DataManager>
@@ -23,7 +24,10 @@ public:
 	ItemData GetItem(int key) { return itemDatas[key]; }
 	int GetItemCount() { return itemDatas.size(); }
 
+	int GetStackItemCount() {return stackItemCount;}
+
 private:
+	int stackItemCount = 0;
 	unordered_map<int, ItemData> itemDatas;
 
 };

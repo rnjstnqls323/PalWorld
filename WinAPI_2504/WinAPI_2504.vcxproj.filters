@@ -261,13 +261,16 @@
     <ClInclude Include="Objects\Game\Palworld\Character\Character.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Objects\Game\Palworld\Character\Inventory.h">
+    <ClInclude Include="Objects\Game\Palworld\UI\Inventory.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Objects\Game\Palworld\Character\Weapon.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Objects\Game\Palworld\Basic\Button.h">
+    <ClInclude Include="Objects\Game\Palworld\UI\Button.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Objects\Game\Palworld\UI\InventoryButton.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
@@ -482,7 +485,13 @@
     <ClCompile Include="Objects\Game\Palworld\Character\Weapon.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Objects\Game\Palworld\Character\Inventory.cpp">
+    <ClCompile Include="Objects\Game\Palworld\UI\Inventory.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Objects\Game\Palworld\UI\Button.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Objects\Game\Palworld\UI\InventoryButton.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

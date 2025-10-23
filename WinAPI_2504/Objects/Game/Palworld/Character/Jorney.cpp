@@ -28,12 +28,15 @@ Jorney::~Jorney()
 	delete leftHand;
 	delete rightHand;
 	delete weapon;
+	delete inventory;
 }
 
 void Jorney::Update(BoxCollider* floor)
 {
 	rightHand->SetWorld(model->GetTransformByNode(35));
 	leftHand->SetWorld(model->GetTransformByNode(11));
+
+	inventory->Update();
 
 	Character::Update(floor);
 	weapon->Update();

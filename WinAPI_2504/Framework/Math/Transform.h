@@ -18,7 +18,7 @@ public:
 
 	void UpdateWorld();
 
-	void Edit();
+	virtual void Edit();
 
 	void Save();
 	void Load();

@@ -18,6 +18,7 @@ public:
 	bool IsBoxCollision(BoxCollider* collider) override;
 	bool IsSphereCollision(SphereCollider* collider) override;
 	bool IsCapsuleCollision(CapsuleCollider* collider) override;
+	bool IsPointCollision(const Vector3 pos);
 
 	void GetOBB(ObbDesc& desc);
 
@@ -27,6 +28,7 @@ public:
 	void SaveBox();
 	void LoadBox();
 	Vector3 GetSize() { return size; }
+	void SetSize(Vector3 size) { this->size = size; UpdateMesh(); }
 
 private:
 	bool IsSeperateAxis(Vector3 D, Vector3 axis, ObbDesc box1, ObbDesc box2);

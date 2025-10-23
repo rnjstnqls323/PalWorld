@@ -199,9 +199,9 @@
     <ClInclude Include="Objects\Collider\SphereCollider.h" />
     <ClInclude Include="Objects\Game\Block.h" />
     <ClInclude Include="Objects\Game\GameBall.h" />
-    <ClInclude Include="Objects\Game\Palworld\Basic\Button.h" />
+    <ClInclude Include="Objects\Game\Palworld\UI\Button.h" />
     <ClInclude Include="Objects\Game\Palworld\Character\Character.h" />
-    <ClInclude Include="Objects\Game\Palworld\Character\Inventory.h" />
+    <ClInclude Include="Objects\Game\Palworld\UI\Inventory.h" />
     <ClInclude Include="Objects\Game\Palworld\Character\Jorney.h" />
     <ClInclude Include="Objects\Game\Palworld\Character\Pal.h" />
     <ClInclude Include="Objects\Game\Palworld\Character\Weapon.h" />
@@ -212,6 +212,7 @@
     <ClInclude Include="Objects\Game\Palworld\Object\Tree.h" />
     <ClInclude Include="Objects\Game\Palworld\Object\Wood.h" />
     <ClInclude Include="Objects\Game\Palworld\Object\WorldFloor.h" />
+    <ClInclude Include="Objects\Game\Palworld\UI\InventoryButton.h" />
     <ClInclude Include="Objects\Game\Steve.h" />
     <ClInclude Include="Objects\Manger\DataManager.h" />
     <ClInclude Include="Objects\Manger\EventManager.h" />
@@ -287,8 +288,9 @@
     <ClCompile Include="Objects\Collider\SphereCollider.cpp" />
     <ClCompile Include="Objects\Game\Block.cpp" />
     <ClCompile Include="Objects\Game\GameBall.cpp" />
+    <ClCompile Include="Objects\Game\Palworld\UI\Button.cpp" />
     <ClCompile Include="Objects\Game\Palworld\Character\Character.cpp" />
-    <ClCompile Include="Objects\Game\Palworld\Character\Inventory.cpp" />
+    <ClCompile Include="Objects\Game\Palworld\UI\Inventory.cpp" />
     <ClCompile Include="Objects\Game\Palworld\Character\Jorney.cpp" />
     <ClCompile Include="Objects\Game\Palworld\Character\Weapon.cpp" />
     <ClCompile Include="Objects\Game\Palworld\Object\MainObject.cpp" />
@@ -298,6 +300,7 @@
     <ClCompile Include="Objects\Game\Palworld\Object\Tree.cpp" />
     <ClCompile Include="Objects\Game\Palworld\Object\Wood.cpp" />
     <ClCompile Include="Objects\Game\Palworld\Object\WorldFloor.cpp" />
+    <ClCompile Include="Objects\Game\Palworld\UI\InventoryButton.cpp" />
     <ClCompile Include="Objects\Game\Steve.cpp" />
     <ClCompile Include="Objects\Manger\DataManager.cpp" />
     <ClCompile Include="Objects\Manger\EventManager.cpp" />

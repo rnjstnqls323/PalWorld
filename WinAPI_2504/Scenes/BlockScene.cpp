@@ -26,8 +26,17 @@ BlockScene::~BlockScene()
 
 void BlockScene::Update()
 {
+	for (Block* block : blocks)
+		block->Update();
+	if (blocks[0]->IsPointCollision(mousePos))
+		blocks[0]->GetMaterial()->SetColor(1, 0, 0);
+	else
+		blocks[0]->GetMaterial()->SetColor(0, 1, 0);
+
 	if (Input::Get()->IsKeyDown(VK_LBUTTON))
-		Mine();
+	{
+
+	}
 
 	if (Input::Get()->IsKeyDown(VK_RBUTTON))
 		Build();
@@ -44,18 +53,20 @@ void BlockScene::PreRender()
 
 void BlockScene::Render()
 {
-	for (Block* block : blocks)
-		block->Render();
 
 	steve->Render();
 }
 
 void BlockScene::PostRender()
 {
+	for (Block* block : blocks)
+		block->Render();
 }
 
 void BlockScene::GUIRender()
 {
+	for (Block* block : blocks)
+		block->Edit();
 }
 
 void BlockScene::LoadTextures()
@@ -85,7 +96,8 @@ void BlockScene::CreateBlocks()
 
 				block->Update();
 
-				blocks.push_back(block);				
+				blocks.push_back(block);			
+				return;
 			}
 		}
 	}

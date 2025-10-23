@@ -38,6 +38,9 @@ void DataManager::LoadData(const string& fileName)
 		itemData.price = stoi(data[3]);
 		itemData.weight = stoi(data[3]);
 		itemData.value = stof(data[4]);
+		itemData.itemStack = stoi(data[5]);
+
+		if (itemData.itemStack) stackItemCount++;
 
 		itemDatas[itemData.key] = itemData;
 	}
