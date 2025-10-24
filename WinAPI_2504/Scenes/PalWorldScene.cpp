@@ -34,6 +34,7 @@ void PalWorldScene::Update()
 	tree->Update((BoxCollider*&)floor, jorney);
 	rock->Update((BoxCollider*&)floor,jorney);
 	jorney->Update(floor);
+
 	//weapon->Update();
 
 	//quad->UpdateWorld();
@@ -66,7 +67,6 @@ void PalWorldScene::GUIRender()
 	//rock->Edit();
 	//tree->Edit();
 	jorney->Edit();
-	jorney->GetInventory()->Edit();
 	//quad->SetTag("Quad");
 	//quad->Edit();
 

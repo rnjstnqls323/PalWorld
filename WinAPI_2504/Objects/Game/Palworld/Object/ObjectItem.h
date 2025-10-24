@@ -9,13 +9,14 @@ class ObjectItem : public SphereCollider
 {
 protected:
 	const float GRAVITY = 9.8;
+	const float SPAWN_DISTANCE = 0.7;
 
 public:
 	ObjectItem();
 	ObjectItem(float size);
 	~ObjectItem();
 
-	void SpawnItem(Vector3 pos);
+	virtual void SpawnItem(Vector3 pos);
 	void Update(BoxCollider*& floor, class Jorney*& jorney);
 	void Render();
 

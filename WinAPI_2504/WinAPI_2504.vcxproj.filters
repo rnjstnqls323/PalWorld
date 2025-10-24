@@ -273,6 +273,9 @@
     <ClInclude Include="Objects\Game\Palworld\UI\InventoryButton.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Objects\Game\Palworld\UI\Item.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinAPI_2504.cpp">

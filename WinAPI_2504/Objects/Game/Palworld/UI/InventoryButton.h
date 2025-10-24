@@ -1,30 +1,26 @@
 #pragma once
 
-class InventoryButton :public Button
+class ItemButton :public Button
 {
 	//원래라면 이거 나눠서 버튼따로, 아이템 따로 해야됨
+	//걍 따로만듦
 public:
-	InventoryButton(int key);
-	~InventoryButton();
-
-	void SetData(ItemData*& data) { this->data = data; }
+	ItemButton(Item*& item);
+	~ItemButton();
 
 	void Render() override;
 
-	void SetNum(int num) { this->num = num; }
-	int GetNum() { return num; }
+	Item*& GetItem() { return item; }
 
+	void SetData(Item*& item);
 	void RenderTexture();
 
-	void SpawnButton(int key);
-
 protected:
-	// Button을(를) 통해 상속됨
-	void OnClick() override;
+	void SpawnButton();
+	virtual void OnClick();
 
 private:
-	int num = 0;
-	
-	ItemData* data;
+	Item* item;
+
 
 };

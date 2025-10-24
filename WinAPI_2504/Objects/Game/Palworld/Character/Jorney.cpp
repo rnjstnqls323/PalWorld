@@ -33,6 +33,12 @@ Jorney::~Jorney()
 
 void Jorney::Update(BoxCollider* floor)
 {
+
+	if (Input::Get()->IsKeyDown('I') && !inventory->IsOn())
+		inventory->OnInventory();
+	else if (Input::Get()->IsKeyDown('I') && inventory->IsOn())
+		inventory->OffInventory();
+
 	rightHand->SetWorld(model->GetTransformByNode(35));
 	leftHand->SetWorld(model->GetTransformByNode(11));
 
@@ -57,6 +63,7 @@ void Jorney::Edit()
 	rightHand->Edit();
 	leftHand->Edit();
 	weapon->Edit();
+	inventory->Edit();
 }
 
 

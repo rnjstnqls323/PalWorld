@@ -15,9 +15,13 @@ ObjectItem::~ObjectItem()
 
 void ObjectItem::SpawnItem(Vector3 parentPos)
 {
+	//다시 잡자 
 	isFloor = false;
 	SetActive(true);
-	SetLocalPosition(parentPos);
+	Vector3 pos = CAM->GetGlobalPosition() - parentPos;
+	pos.Normalize();
+
+	SetLocalPosition(localPosition + (pos* SPAWN_DISTANCE));
 
 	UpdateWorld();
 	model->UpdateWorld();
@@ -29,6 +33,8 @@ void ObjectItem::Update(BoxCollider*& floor, Jorney*& jorney)
 	if (isFloor) return;
 	RigidBody();
 	isFloor = IsCollisionToFloor(floor);
+
+	//IsCollisionToJorney(jorney);
 
 	//조니 닿으면 흡수
 
@@ -82,7 +88,9 @@ bool ObjectItem::IsCollisionToFloor(BoxCollider* floor)
 
 bool ObjectItem::IsCollisionToJorney(Jorney* jorney)
 {
-	//조니랑 닿으면 인벤들어가는거 구현하기~!
+	int key = data.key;
+	EventManager::Get()->ExcuteEvent("AddItem",&key);
+	SetActive(false);
 	return false;
 }
 

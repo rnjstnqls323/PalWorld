@@ -10,9 +10,12 @@ public:
 	virtual void Update();
 	virtual void Render();
 
+	void SetOnClick(function<void()> func) { onClick = func; }
+
 protected:
 	virtual void OnClick() = 0;
 
 protected:
+	function<void()> onClick;
 	Quad* quad;
 };
