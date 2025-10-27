@@ -48,12 +48,4 @@ void ItemButton::SpawnButton()
 	//item->SetItemCount(1);
 }
 
-void ItemButton::OnClick()
-{
-	if (onClick == nullptr) return;
-	onClick();
-
-	//int key = item->GetItemKey();
-	//EventManager::Get()->ExcuteEvent("SelectItem", &key);
-}
 

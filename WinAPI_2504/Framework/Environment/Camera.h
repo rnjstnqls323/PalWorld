@@ -17,6 +17,12 @@ public:
 	ShowCursor(false);
 	}
 
+	void ShowMouse(bool isShow)
+	{
+		isMouseHide = !isMouseHide;
+		ShowCursor(isShow);
+	}
+
 	class Ray ScreenPointToRay(Vector3 screenPos);
 
 private:

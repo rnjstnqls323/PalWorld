@@ -17,7 +17,6 @@ public:
 
 protected:
 	void SpawnButton();
-	virtual void OnClick();
 
 private:
 	Item* item;

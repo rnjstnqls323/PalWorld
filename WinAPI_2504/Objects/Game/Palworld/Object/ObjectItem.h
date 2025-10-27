@@ -34,7 +34,8 @@ protected:
 
 	void RigidBody();
 protected:
-
+	float spawnTime = 0.0f;
+	bool isSpawn = false;
 	bool isFloor = false;
 	ItemType type;
 

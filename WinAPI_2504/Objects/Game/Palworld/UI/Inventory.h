@@ -28,9 +28,9 @@ public:
 	{
 		isOn = true;
 		choiceItem = nullptr;
-		ShowCursor(true);
+		CAM->ShowMouse(true);
 	}
-	void OffInventory() { isOn = false; ShowCursor(false);}
+	void OffInventory() { isOn = false; CAM->ShowMouse(true);}
 
 
 private:
@@ -54,6 +54,9 @@ private:
 
 	int buttonCount = 0;
 	int bagWeight = 0;
+
+
+	SellButton* sellButton;
 
 	ImVec4 color = { 0,0,0,255 };
 

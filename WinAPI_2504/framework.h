@@ -150,6 +150,7 @@ typedef function<void()> Event;
 
 #include "Objects/Game/Palworld/UI/Button.h"
 #include "Objects/Game/Palworld/UI/Item.h"
+#include "Objects/Game/Palworld/UI/SellButton.h"
 #include "Objects/Game/Palworld/UI/InventoryButton.h"
 #include "Objects/Game/Palworld/UI/Inventory.h"
 

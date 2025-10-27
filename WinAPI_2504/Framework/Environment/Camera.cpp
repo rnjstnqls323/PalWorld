@@ -24,8 +24,7 @@ void Camera::Update()
 
     if (Input::Get()->IsKeyDown(VK_ESCAPE))
     {
-        isMouseHide = !isMouseHide;
-        ShowCursor(true);
+        ShowMouse(true);
     }
 
     if (target)

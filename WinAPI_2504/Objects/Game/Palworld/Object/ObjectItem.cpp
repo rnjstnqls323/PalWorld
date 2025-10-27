@@ -21,10 +21,14 @@ void ObjectItem::SpawnItem(Vector3 parentPos)
 	Vector3 pos = CAM->GetGlobalPosition() - parentPos;
 	pos.Normalize();
 
-	SetLocalPosition(localPosition + (pos* SPAWN_DISTANCE));
+	SetLocalPosition(parentPos);
+	//SetLocalPosition(localPosition + (pos* SPAWN_DISTANCE));
 
 	UpdateWorld();
 	model->UpdateWorld();
+
+	isSpawn = true;
+	spawnTime = 0.0f;
 }
 
 void ObjectItem::Update(BoxCollider*& floor, Jorney*& jorney)
@@ -34,9 +38,18 @@ void ObjectItem::Update(BoxCollider*& floor, Jorney*& jorney)
 	RigidBody();
 	isFloor = IsCollisionToFloor(floor);
 
-	//IsCollisionToJorney(jorney);
+
+	//if(!isSpawn)
+	//	IsCollisionToJorney(jorney);
+	//else
+	//{
+	//	spawnTime += DELTA;
+	//	if (spawnTime > 1.0f)
+	//		isSpawn = false;
+	//}
 
 	//Á¶´Ï ´êÀ¸¸é Èí¼ö
+	IsCollisionToJorney(jorney);
 
 	UpdateWorld();
 	model->UpdateWorld();

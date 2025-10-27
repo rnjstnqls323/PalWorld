@@ -50,3 +50,9 @@ void Button::Render()
 	BoxCollider::Render();
 	quad->Render();
 }
+
+void Button::OnClick()
+{
+	if (onClick == nullptr) return;
+	onClick();
+}

@@ -13,7 +13,7 @@ public:
 	void SetOnClick(function<void()> func) { onClick = func; }
 
 protected:
-	virtual void OnClick() = 0;
+	virtual void OnClick();
 
 protected:
 	function<void()> onClick;

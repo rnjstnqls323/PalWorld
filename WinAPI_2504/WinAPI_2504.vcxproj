@@ -214,6 +214,7 @@
     <ClInclude Include="Objects\Game\Palworld\Object\WorldFloor.h" />
     <ClInclude Include="Objects\Game\Palworld\UI\InventoryButton.h" />
     <ClInclude Include="Objects\Game\Palworld\UI\Item.h" />
+    <ClInclude Include="Objects\Game\Palworld\UI\SellButton.h" />
     <ClInclude Include="Objects\Game\Steve.h" />
     <ClInclude Include="Objects\Manger\DataManager.h" />
     <ClInclude Include="Objects\Manger\EventManager.h" />
@@ -302,6 +303,7 @@
     <ClCompile Include="Objects\Game\Palworld\Object\Wood.cpp" />
     <ClCompile Include="Objects\Game\Palworld\Object\WorldFloor.cpp" />
     <ClCompile Include="Objects\Game\Palworld\UI\InventoryButton.cpp" />
+    <ClCompile Include="Objects\Game\Palworld\UI\SellButton.cpp" />
     <ClCompile Include="Objects\Game\Steve.cpp" />
     <ClCompile Include="Objects\Manger\DataManager.cpp" />
     <ClCompile Include="Objects\Manger\EventManager.cpp" />

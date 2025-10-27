@@ -15,6 +15,8 @@ Inventory::Inventory()
 	backGround->UpdateWorld();
 	
 	SetEventFunc();
+
+	isOn = false;
 }
 
 Inventory::~Inventory()
@@ -28,6 +30,8 @@ Inventory::~Inventory()
 	{
 		delete button;
 	}
+	delete sellButton;
+	delete choiceItem;
 }
 
 void Inventory::Render()
@@ -44,14 +48,18 @@ void Inventory::Render()
 		button->Render();
 	}
 
-	if(choiceItem != nullptr)
+	if (choiceItem != nullptr)
+	{
 		choiceItemButton->Render();
+		sellButton->Render();
+	}
 
 	backGround->Render();
 }
 
 void Inventory::Update()
 {
+	if (!isOn) return;
 	for (auto& pair : stackButtons)
 	{
 		pair.second->Update();
@@ -62,8 +70,11 @@ void Inventory::Update()
 	}
 
 	choiceItemButton->Update();
+	sellButton->Update();
+
 	UpdateWorld();
 	backGround->UpdateWorld();
+
 
 	if (bagWeight == MAX_BAG_WEIGHT)
 		color = { 255,0,0,255 };
@@ -109,6 +120,7 @@ bool Inventory::AddItem(int key)
 
 bool Inventory::SellItem(int key)
 {
+	key = choiceItem->GetItemKey();
 	ItemData& data = items[key]->GetItemData();
 
 	if (data.itemStack)
@@ -188,6 +200,8 @@ void Inventory::Edit()
 	}
 
 	RenderTexture(); 
+
+	sellButton->Edit();
 }
 
 void Inventory::SpawnButton(ItemButton*& button, bool isShowButton)
@@ -249,6 +263,11 @@ void Inventory::CreateButtons()
 
 	choiceItemButton = new ItemButton(items[1001]);
 	choiceItemButton->SetLocalPosition(100,200,0);
+
+
+	sellButton = new SellButton();
+	sellButton->SetLocalPosition(250, 200, 0);
+
 }
 
 void Inventory::CreateItems()
@@ -281,6 +300,12 @@ void Inventory::RenderTexture()
 
 	drawList->AddText(font, fontSize,
 		ImVec2(localPosition.x + 50, localPosition.y + 70),
+		col,
+		text.c_str());
+
+	text = "Money : " + to_string(money);
+	drawList->AddText(font, fontSize,
+		ImVec2(localPosition.x+50, localPosition.y - 350),
 		col,
 		text.c_str());
 }
